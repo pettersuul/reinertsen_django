@@ -4,18 +4,18 @@ from .models import client
 
 # Create your views here.
 
-def posts(request):
-    return render(request, 'posts/all.html', {
-        'posts': client.entries(
-            {'content_type': 'post', 'include': 3}
+def index(request):
+    return render(request, 'index.html', {
+        'pages': client.entries(
+            {'content_type': 'page', 'include': 3}
         )
     })
 
-def post_by_slug(request, slug):
+def page(request, slug):
     try:
-        post = client.entries(
-            {'content_type': 'post', 'fields.slug': slug, 'include': 3}
+        page = client.entries(
+            {'content_type': 'page', 'fields.slug': slug, 'include': 3}
         )[0]
-        return render(request, 'posts/post.html', {'post': post})
+        return render(request, 'page.html', {'page': page})
     except IndexError:
         raise Http404('Post not found for slug: {0}'.format(slug))

@@ -1,9 +1,0 @@
-{% extends "layout.html" %}
-{% load static %}
-
-{% block content %}
-{% for post in posts %}
-  <a href="/posts/{{ post.slug }}">{{ post.title }}</a>
-  <p>{{ post.lead }}</p>
-{% endfor %}
-{% endblock %}

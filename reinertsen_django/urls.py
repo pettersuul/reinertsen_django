@@ -4,6 +4,6 @@ from frontend import views
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
-    url(r'^$', views.posts),
-    url(r'^posts/(?P<slug>[-\w]+)$', views.post_by_slug)
+    url(r'^$', views.index),
+    url(r'^(?P<slug>[-\w]+)$', views.page)
 ]

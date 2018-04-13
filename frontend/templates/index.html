@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+{% for page in pages %}
+  <a href="/{{ page.slug }}">{{ page.title }}</a>
+  <p>{{ page.lead }}</p>
+{% endfor %}
+{% endblock %}
