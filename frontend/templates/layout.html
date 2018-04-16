@@ -10,18 +10,18 @@
     <meta name="author" content="" />
 
     {% block title %}
-      <title>Page title</title>
+      <title>Reinertsen New Energy</title>
     {% endblock %}
 
     <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    {% include 'header.html' %}
+    {% include 'components/header.html' %}
 
     {% block content %}
     {% endblock %}
 
-    {% include 'footer.html' %}
+    {% include 'components/footer.html' %}
   </body>
 </html>

@@ -3,17 +3,25 @@
 
 {% block content %}
 <section>
-  <h2>{{ page.title }}</h2>
-  <p>{{ page.lead }}</p>
-  {{ page.content|markdownify|safe }}
+  <div class="col">
+    <h2>{{ page.title }}</h2>
+  </div>
+  <div class="col">
+    <p>{{ page.lead }}</p>
+    {{ page.content|markdownify|safe }}
+  </div>
 </section>
 
 {% if page.section %}
 
   {% for section in page.section %}
   <section>
-    <h3>{{ section.title }}</h3>
-    {{ section.content|markdownify|safe }}
+    <div class="col">
+      <h3>{{ section.title }}</h3>
+    </div>
+    <div class="col">
+      {{ section.content|markdownify|safe }}
+    </div>
   </section>
   {% endfor %}
 

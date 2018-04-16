@@ -5,8 +5,12 @@
 
 {% for page in pages %}
 <section>
-  <h2>{{ page.title }}</h2>
-  <p>{{ page.lead }}</p>
+  <div class="col">
+    <h2>{{ page.title }}</h2>
+  </div>
+  <div class="col">
+    <p>{{ page.lead }}</p>
+  </div>
 </section>
 {% endfor %}
 {% endblock %}

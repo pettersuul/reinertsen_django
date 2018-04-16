@@ -4,8 +4,13 @@
 {% block content %}
 
 <section>
-  <h2>{{ listing.title }}</h2>
-  {{ listing.content|markdownify|safe }}
+  <div class="col">
+    <h2>{{ listing.title }}</h2>
+  </div>
+  
+  <div class="col">
+    {{ listing.content|markdownify|safe }}
+  </div>
 </section>
 
 {% endblock %}

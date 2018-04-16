@@ -4,11 +4,15 @@
 {% block content %}
 
 <section>
-  <h2>{{ page.title }}</h2>
+  <div class="col">
+    <h2>{{ page.title }}</h2>
+  </div>
 
-  {% for section in page.section %}
-  <a href="/work-listings/{{section.slug}}">{{ section.title }}</a>
-  {% endfor %}
+  <div class="col">
+    {% for section in page.section %}
+    <a href="/work-listings/{{section.slug}}">{{ section.title }}</a>
+    {% endfor %}
+  </div>
 </section>
 
 {% endblock %}
