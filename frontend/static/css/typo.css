@@ -1,0 +1,97 @@
+/* TYPOGRAPHY */
+body{
+  font-family: 'DIN Next', sans-serif;
+}
+
+p{
+  margin: 0 0 1.5rem 0;
+  font-weight: 300;
+}
+
+a{
+  font-weight: 400;
+  color: inherit;
+}
+
+b{
+  font-weight: 400;
+}
+
+ul, ol{
+  font-weight: 300;
+  padding: 0 0 0 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.heading-jumbo, .heading-display, .heading-large{
+  margin: 0 0 3rem 0;
+  text-transform: uppercase;
+}
+
+.heading-medium, .heading-small{
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.heading-jumbo{
+  font-size: 5.25rem;
+  line-height: 6rem;
+}
+
+.heading-display{
+  font-size: 3.875rem;
+  line-height: 4.5rem;
+}
+
+.heading-large{
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+.heading-medium{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.heading-small{
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .heading-jumbo{
+    font-size: 3.875rem;
+    line-height: 4.5rem;
+  }
+
+  .heading-display{
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .heading-large{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .heading-medium{
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .heading-small{
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 480px) {
+}
