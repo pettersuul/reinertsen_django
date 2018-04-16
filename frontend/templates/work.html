@@ -3,13 +3,12 @@
 
 {% block content %}
 
-<h2>{{ page.title }}</h2>
+<section>
+  <h2>{{ page.title }}</h2>
 
-{% for section in page.section %}
-
-<a href="/work-listings/{{section.slug}}">{{ section.title }}</a>
-
-{% endfor %}
-
+  {% for section in page.section %}
+  <a href="/work-listings/{{section.slug}}">{{ section.title }}</a>
+  {% endfor %}
+</section>
 
 {% endblock %}

@@ -2,21 +2,19 @@
 {% load markdownify %}
 
 {% block content %}
-
-<h2>{{ page.title }}</h2>
-
-{{ page.lead }}
-
-{{ page.content|markdownify|safe }}
-
+<section>
+  <h2>{{ page.title }}</h2>
+  <p>{{ page.lead }}</p>
+  {{ page.content|markdownify|safe }}
+</section>
 
 {% if page.section %}
 
   {% for section in page.section %}
-
-  <h3>{{ section.title }}</h3>
-  {{ section.content|markdownify|safe }}
-
+  <section>
+    <h3>{{ section.title }}</h3>
+    {{ section.content|markdownify|safe }}
+  </section>
   {% endfor %}
 
 {% endif %}

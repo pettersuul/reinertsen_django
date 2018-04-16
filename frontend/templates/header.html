@@ -1,3 +1,7 @@
-{% for nav in nav %}
-  <a href="/{{ nav.slug }}">{{ nav.title }}</a>
-{% endfor %}
+<header>
+  <ul>
+  {% for nav in nav %}
+    <li><a href="/{{ nav.slug }}">{{ nav.title }}</a></li>
+  {% endfor %}
+  </ul>
+</header>
