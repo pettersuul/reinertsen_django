@@ -1,0 +1,232 @@
+html{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-family: 'DIN Next';
+  position: relative;
+}
+
+body{
+  padding: 6rem 0 9rem 0;
+  box-sizing: border-box;
+  min-height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+/* HEADER */
+header{
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+}
+
+nav{
+  float: left;
+  display: block;
+}
+
+nav ul{
+  padding: 0;
+  margin: 2rem 0 0 0;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+nav ul li{
+  margin: 0 1.5rem 0 0;
+  list-style: none;
+  display: block;
+  float: left;
+}
+
+nav ul li a{
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  text-decoration: underline;
+}
+
+.logo{
+  float: right;
+}
+
+.logo a{
+  text-decoration: none;
+}
+
+.logo h1{
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.logo h1 span{
+  display: block;
+}
+
+.logo h1 span:first-child{
+  font-size: 2rem;
+  line-height: 2rem
+}
+
+.logo h1 span:last-child{
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+#menu-button{
+  margin: 0 0 0 .75rem;
+  height: 2rem;
+  float: right;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  display: none;
+}
+
+#menu-button:hover{
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer{
+  padding: 1.5rem 0 1.5rem 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #222;
+  color: #fff;
+}
+
+/* BODY */
+section{
+  padding: 4.5rem 0 3rem 0;
+  overflow: hidden;
+}
+
+section.hero{
+  padding: 4.5rem 0 0 0;
+}
+
+.col{
+  padding: 0 6rem;
+  width: calc(50% - 12rem);
+  float: left;
+}
+
+.col.wide{
+  width: calc(100% - 12rem);
+}
+
+/* UTILITY */
+img{
+  display: block;
+  width: 100%;
+}
+
+.icon{
+  font-family: 'material icons';
+}
+
+.list{
+  display: block;
+  margin: 0 0 1.5rem 0;
+}
+
+/* BG-COLORS */
+
+.bg-bluelight{
+  background-color: #07c;
+  color: #fff;
+}
+
+.bg-bluemedium{
+  background-color: #045;
+  color: #fff;
+}
+
+.bg-bluedark{
+  background-color: #022;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  section{
+    padding: 3rem 0 1.5rem 0;
+  }
+  .col{
+    padding: 0 3rem;
+    width: calc(50% - 6rem);
+  }
+  .col.wide{
+    width: calc(100% - 6rem);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body{
+    padding: 6rem 0 12rem 0;
+  }
+  .col{
+    width: calc(100% - 6rem);
+  }
+  header{
+    padding: .75rem 0;
+  }
+  .logo h1 span:first-child{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .logo h1 span:last-child{
+    font-size: .75rem;
+    line-height: .75rem;
+  }
+  nav{
+    display: none;
+    width: calc(100% - 6rem);
+    padding: 0 3rem;
+    position: absolute;
+    background-color: rgba(255,255,255,.8);
+    top: 3.75rem;
+    left: 0;
+  }
+  nav ul{
+    margin: 2rem 0;
+  }
+  nav ul li{
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    float: none;
+    text-align: right;
+  }
+  #menu-button{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .col{
+    padding: 0 3rem;
+    width: calc(100% - 6rem);
+  }
+  .col.wide{
+    width: calc(100% - 6rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .col{
+    padding: 0 1.5rem;
+    width: calc(100% - 3rem);
+  }
+  .col.wide{
+    width: calc(100% - 3rem);
+  }
+}

@@ -1,7 +1,22 @@
 <header>
-  <ul>
-  {% for nav in nav %}
-    <li><a href="/{{ nav.slug }}">{{ nav.title }}</a></li>
-  {% endfor %}
-  </ul>
+  <div class="col wide">
+    <nav>
+      <ul>
+      {% for nav in nav %}
+        <li><a href="/{{ nav.slug }}">{{ nav.title }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+    <div id="menu-button" onclick="toggleNav()">
+      <span class="icon">menu</span>
+    </div>
+    <div class="logo">
+      <a href="/">
+        <h1>
+          <span>Reinertsen</span>
+          <span>New Energy</span>
+        </h1>
+      </a>
+    </div>
+  </div>
 </header>

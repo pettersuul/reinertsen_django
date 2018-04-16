@@ -1,8 +1,14 @@
 <footer>
-  {{ footer.title }}
-  {{ footer.orgnumber }}
-  {{ footer.adress }}
+  <div class="col">
+    <p>
+      <b>{{ footer.title }}</b><br>
+      Organisasjonsnummer: {{ footer.orgnumber }}<br>
+      {{ footer.adress }}
+    </p>
+  </div>
 
-  <a href="mailto:{{ footer.email }}">{{ footer.email }}</a>
-  <a href="https://{{ footer.facebook }}">{{ footer.facebook }}</a>
+  <div class="col">
+    <a href="mailto:{{ footer.email }}">{{ footer.email }}</a><br>
+    <a href="https://{{ footer.facebook }}">{{ footer.facebook }}</a>
+  </div>
 </footer>

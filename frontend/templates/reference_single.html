@@ -5,16 +5,16 @@
 
 <section>
   <div class="col">
-    <h2>{{ reference.title }}</h2>
+    <h2 class="heading-display">{{ reference.title }}</h2>
   </div>
   <div class="col">
     {{ reference.metadata|markdownify|safe }}
   </div>
 </section>
 
-<section>
+<section class="bg-bluelight">
   <div class="col">
-    <h3>Description</h3>
+    <h3 class="heading-large">Description</h3>
   </div>
   <div class="col">
     {{ reference.description|markdownify|safe }}
@@ -22,9 +22,9 @@
 </section>
 
 {% if reference.scope %}
-<section>
+<section class="bg-bluemedium">
   <div class="col">
-    <h3>Scope of Work</h3>
+    <h3 class="heading-large">Scope of Work</h3>
   </div>
   <div class="col">
     {{ reference.scope|markdownify|safe }}

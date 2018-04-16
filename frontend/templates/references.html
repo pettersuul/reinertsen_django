@@ -5,12 +5,12 @@
 
 <section>
   <div class="col">
-    <h2>{{ page.title }}</h2>
+    <h2 class="heading-display">Kunde&shy;referanser</h2>
   </div>
 
   <div class="col">
     {% for section in page.section %}
-    <a href="/references/{{section.slug}}">{{ section.title }}</a>
+      <a class="list" href="/references/{{section.slug}}">{{ section.title }}</a>
     {% endfor %}
   </div>
 </section>
