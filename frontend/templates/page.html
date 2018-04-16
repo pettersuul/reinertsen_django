@@ -3,10 +3,23 @@
 
 {% block content %}
 
-{{ page.title }}
+<h2>{{ page.title }}</h2>
 
 {{ page.lead }}
 
 {{ page.content|markdownify|safe }}
+
+
+{% if page.section %}
+
+  {% for section in page.section %}
+
+  <h3>{{ section.title }}</h3>
+  {{ section.content|markdownify|safe }}
+
+  {% endfor %}
+
+{% endif %}
+
 
 {% endblock %}

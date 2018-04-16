@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% load markdownify %}
+
+{% block content %}
+
+<h2>{{ listing.title }}</h2>
+
+{{ listing.content|markdownify|safe }}
+
+{% endblock %}

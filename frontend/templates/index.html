@@ -2,8 +2,9 @@
 {% load static %}
 
 {% block content %}
+
 {% for page in pages %}
-  <a href="/{{ page.slug }}">{{ page.title }}</a>
+  <h2>{{ page.title }}</h2>
   <p>{{ page.lead }}</p>
 {% endfor %}
 {% endblock %}

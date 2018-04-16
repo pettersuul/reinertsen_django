@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load markdownify %}
+
+{% block content %}
+
+<h2>{{ page.title }}</h2>
+
+{% for section in page.section %}
+
+<a href="/references/{{section.slug}}">{{ section.title }}</a>
+
+{% endfor %}
+
+
+{% endblock %}

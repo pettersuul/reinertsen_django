@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% load markdownify %}
+
+{% block content %}
+
+<h2>{{ reference.title }}</h2>
+
+{{ reference.metadata|markdownify|safe }}
+<h3>Description</h3>
+{{ reference.description|markdownify|safe }}
+
+{% if reference.scope %}
+  <h3>Scope of Work</h3>
+  {{ reference.scope|markdownify|safe }}
+{% endif %}
+
+{% endblock %}
