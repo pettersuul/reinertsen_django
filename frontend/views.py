@@ -8,6 +8,8 @@ def index(request):
     return render(request, 'index.html', {
         'pages': client.entries({'content_type': 'page', 'order': 'fields.order', 'limit': 3}),
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order'}),
+        'listings': client.entries({'content_type': 'page', 'fields.slug': 'work-listings'})[0],
+        'contact':  client.entries({'content_type': 'contact'})[0],
         'footer':  client.entries({'content_type': 'footer'})[0]
     })
 

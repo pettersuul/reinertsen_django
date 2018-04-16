@@ -27,4 +27,32 @@
   </section>
   {% endif %}
 {% endfor %}
+
+<section class="">
+  <div class="col">
+    <h2 class="heading-display">{{ listings.title }}</h2>
+  </div>
+  <div class="col">
+    {% for listing in listings.section %}
+      <a class="list" href="/work-listings/{{ listing.slug }}">{{ listing.title }}</a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="">
+  <div class="col wide">
+    <h2 class="heading-display">{{ contact.title }}</h2>
+  </div>
+  {% for person in contact.person %}
+    <div class="col wide person">
+      <img src="{{ person.image.url }}" title="{{ person.image.title }}">
+      <p>
+        <h3 class="heading-small">{{ person.title }}</h3>
+        {{ person.name }}<br>
+        {{ person.phone }}<br>
+        <a href="mailto:{{ person.email }}">{{ person.email }}</a>
+      </p>
+    </div>
+  {% endfor %}
+</section>
 {% endblock %}

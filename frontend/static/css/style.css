@@ -114,10 +114,21 @@ section.hero{
   padding: 4.5rem 0 0 0;
 }
 
+section.hero img{
+  padding: 4.5rem 0 0 0;
+  margin: 0;
+}
+
 .col{
   padding: 0 6rem;
   width: calc(50% - 12rem);
   float: left;
+}
+
+.col.person img{
+  float: left;
+  width: calc(50%);
+  margin: 0 3rem 3rem 0;
 }
 
 .col.wide{
@@ -128,6 +139,7 @@ section.hero{
 img{
   display: block;
   width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .icon{
@@ -218,6 +230,11 @@ img{
   }
   .col.wide{
     width: calc(100% - 6rem);
+  }
+  .col.person img{
+    float: none;
+    width: calc(100%);
+    margin: 0 0 1.5rem 0;
   }
 }
 
