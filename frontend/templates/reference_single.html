@@ -6,6 +6,9 @@
 <section>
   <div class="col">
     <h2 class="heading-display">{{ reference.title }}</h2>
+    {% if reference.image %}
+      <img src="{{ reference.image.url }}">
+    {% endif %}
   </div>
   <div class="col">
     {{ reference.metadata|markdownify|safe }}
