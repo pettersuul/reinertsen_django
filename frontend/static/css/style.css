@@ -121,7 +121,7 @@ section.hero img{
 
 .col{
   padding: 0 6rem;
-  width: calc(50% - 12rem);
+  width: calc(50% - 12rem - 1px);
   float: left;
 }
 
@@ -133,7 +133,7 @@ section.hero img{
 }
 
 .col.wide{
-  width: calc(100% - 12rem);
+  width: calc(100% - 12rem - 1px);
 }
 
 /* UTILITY */
@@ -175,10 +175,10 @@ img{
   }
   .col{
     padding: 0 3rem;
-    width: calc(50% - 6rem);
+    width: calc(50% - 6rem - 1px);
   }
   .col.wide{
-    width: calc(100% - 6rem);
+    width: calc(100% - 6rem - 1px);
   }
 }
 
@@ -187,7 +187,7 @@ img{
     padding: 6rem 0 12rem 0;
   }
   .col{
-    width: calc(100% - 6rem);
+    width: calc(100% - 6rem - 1px);
   }
   header{
     padding: .75rem 0;
@@ -202,7 +202,7 @@ img{
   }
   nav{
     display: none;
-    width: calc(100% - 6rem);
+    width: calc(100% - 6rem - 1px);
     padding: 0 3rem;
     position: absolute;
     background-color: rgba(255,255,255,.8);
@@ -227,10 +227,10 @@ img{
 @media screen and (max-width: 640px) {
   .col{
     padding: 0 3rem;
-    width: calc(100% - 6rem);
+    width: calc(100% - 6rem - 1px);
   }
   .col.wide{
-    width: calc(100% - 6rem);
+    width: calc(100% - 6rem - 1px);
   }
   .col.person img{
     float: none;
@@ -243,9 +243,9 @@ img{
 @media screen and (max-width: 480px) {
   .col{
     padding: 0 1.5rem;
-    width: calc(100% - 3rem);
+    width: calc(100% - 3rem - 1px);
   }
   .col.wide{
-    width: calc(100% - 3rem);
+    width: calc(100% - 3rem - 1px);
   }
 }
