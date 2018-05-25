@@ -19,20 +19,35 @@
 </section>
 
 {% if page.section %}
-
-  {% for section in page.section %}
-  <section class="{% cycle "bg-bluelight" "bg-bluemedium" %}">
-    <div class="col">
-      <h3 class="heading-large">{{ section.title }}</h3>
-      {% if section.image %}
-        <img src="{{ section.image.url }}">
-      {% endif %}
-    </div>
-    <div class="col">
-      {{ section.content|markdownify|safe }}
-    </div>
-  </section>
-  {% endfor %}
+  {% if page.section.0.content_type.id == 'person'%}
+    <section>
+      {% for section in page.section %}
+      <div class="col wide person">
+        <img src="{{ section.image.url }}" title="{{ section.image.title }}">
+        <p>
+          <h3 class="heading-small">{{ section.title }}</h3>
+          {{ section.name }}<br>
+          {{ section.phone }}<br>
+          <a href="mailto:{{ section.email }}">{{ section.email }}</a>
+        </p>
+      </div>
+      {% endfor %}
+    </section>
+  {% else %}
+    {% for section in page.section %}
+      <section class="{% cycle "bg-bluelight" "bg-bluemedium" %}">
+        <div class="col">
+          <h3 class="heading-large">{{ section.title }}</h3>
+          {% if section.image %}
+            <img src="{{ section.image.url }}">
+          {% endif %}
+        </div>
+        <div class="col">
+          {{ section.content|markdownify|safe }}
+        </div>
+      </section>
+    {% endfor %}
+  {% endif %}
 
 {% endif %}
 
