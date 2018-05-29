@@ -10,13 +10,16 @@
     <div id="menu-button" onclick="toggleNav()">
       <span class="icon">menu</span>
     </div>
-    <div class="logo">
-      <a href="/">
-        <h1>
-          <span>Reinertsen</span>
-          <span>New Energy</span>
-        </h1>
-      </a>
-    </div>
+    {% if front == 'True' %}
+    {% else %}
+      <div class="logo">
+        <a href="/">
+          <h1>
+            <span>Reinertsen</span>
+            <span>New Energy</span>
+          </h1>
+        </a>
+      </div>
+    {% endif %}
   </div>
 </header>

@@ -20,7 +20,11 @@
   </head>
 
   <body>
-    {% include 'components/header.html' %}
+    {% if request.path == "/" %}
+      {% include 'components/header.html' with front='True' %}
+    {% else %}
+      {% include 'components/header.html' %}
+    {% endif %}
 
     {% block content %}
     {% endblock %}
