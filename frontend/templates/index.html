@@ -6,13 +6,18 @@
 {% for page in pages %}
   {% if forloop.first %}
   <section class="hero">
-    <div class="col wide">
+    <div class="col">
+      <div class="logo big">
+        <a href="/">
+          <h1>
+            <span>Reinertsen</span>
+            <span>New Energy</span>
+          </h1>
+        </a>
+      </div>
+    </div>
+    <div class="col">
       <h2 class="heading-medium">{{ page.title }}</h2>
-    </div>
-    <div class="col">
-      <h2 class="heading-jumbo">Energi i endring</h2>
-    </div>
-    <div class="col">
       <p>{{ page.lead }}</p>
       <a href="{{ page.slug }}">Les mer</a>
     </div>

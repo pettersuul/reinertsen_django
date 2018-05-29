@@ -81,6 +81,17 @@ nav ul li a:hover{
   line-height: 1rem;
 }
 
+.logo.big h1 span:first-child{
+  font-size: 4rem;
+  line-height: 4rem
+}
+
+.logo.big h1 span:last-child{
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 4rem
+}
+
 #menu-button{
   margin: 0 0 0 .75rem;
   height: 2rem;
