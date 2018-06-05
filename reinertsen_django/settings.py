@@ -110,6 +110,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'frontend', 'static')
 
+# Force HTTPS
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Markdownify
 
 MARKDOWNIFY_WHITELIST_TAGS = [
