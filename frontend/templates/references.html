@@ -4,9 +4,15 @@
 {% block content %}
 
 <section>
-  <div class="col">
+  <div class="col wide">
     <h2 class="heading-display">{{ page.title }}</h2>
   </div>
+
+  {{ if page.lead }}
+  <div class="col">
+    <p>{{ page.lead }}</p>
+  </div>
+  {{ endif }}
 
   <div class="col wide">
     {% for section in page.section %}
