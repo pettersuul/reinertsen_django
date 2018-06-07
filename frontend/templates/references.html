@@ -8,11 +8,11 @@
     <h2 class="heading-display">{{ page.title }}</h2>
   </div>
 
-  {{ if page.lead }}
+  {% if page.lead %}
   <div class="col">
     <p>{{ page.lead }}</p>
   </div>
-  {{ endif }}
+  {% endif %}
 
   <div class="col wide">
     {% for section in page.section %}
