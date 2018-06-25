@@ -48,12 +48,12 @@ ul, ol{
   line-height: 3rem;
 }
 
-.heading-medium{
+.heading-medium, h2{
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
-.heading-small{
+.heading-small, h3{
   font-size: 1.25rem;
   line-height: 1.5rem;
 }
