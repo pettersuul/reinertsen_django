@@ -1,6 +1,9 @@
 from django.http import Http404
 from django.shortcuts import render
 from .models import client
+import socket
+
+domain = socket.gethostname()
 
 # Create your views here.
 
@@ -10,7 +13,8 @@ def index(request):
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order'}),
         'listings': client.entries({'content_type': 'page', 'fields.slug': 'work-listings'})[0],
         'contact':  client.entries({'content_type': 'contact'})[0],
-        'footer':  client.entries({'content_type': 'footer'})[0]
+        'footer':  client.entries({'content_type': 'footer'})[0],
+        'domain': domain
     })
 
 def references(request):
