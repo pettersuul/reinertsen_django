@@ -24,6 +24,7 @@ def index(request):
     })
 
 def references(request):
+    locale = checklocale(request.get_host()),
     return render(request, 'references.html', {
         'page': client.entries({'content_type': 'page', 'fields.slug': 'references', 'locale': locale})[0],
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
@@ -32,6 +33,7 @@ def references(request):
 
 def reference_single(request, slug):
     try:
+        locale = checklocale(request.get_host()),
         reference = client.entries({'content_type': 'reference', 'fields.slug': slug, 'locale': locale})[0]
         return render(request, 'reference_single.html', {
             'reference': reference,
@@ -42,6 +44,7 @@ def reference_single(request, slug):
         raise Http404('Post not found for slug: {0}'.format(slug))
 
 def listings(request):
+    locale = checklocale(request.get_host()),
     return render(request, 'work.html', {
         'page': client.entries({'content_type': 'page', 'fields.slug': 'work-listings', 'locale': locale})[0],
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
@@ -50,6 +53,7 @@ def listings(request):
 
 def listings_single(request, slug):
     try:
+        locale = checklocale(request.get_host()),
         listing = client.entries({'content_type': 'listing', 'fields.slug': slug, 'locale': locale})[0]
         return render(request, 'work-single.html', {
             'listing': listing,
@@ -61,6 +65,7 @@ def listings_single(request, slug):
 
 def page(request, slug):
     try:
+        locale = checklocale(request.get_host()),
         page = client.entries({'content_type': 'page', 'fields.slug': slug, 'locale': locale})[0]
         return render(request, 'page.html', {
             'page': page,
