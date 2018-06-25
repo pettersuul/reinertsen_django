@@ -27,6 +27,7 @@ def index(request):
 def references(request):
     locale = checklocale(request.get_host()),
     return render(request, 'references.html', {
+        'locale': locale,
         'page': client.entries({'content_type': 'page', 'fields.slug': 'references', 'locale': locale})[0],
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
         'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
@@ -37,6 +38,7 @@ def reference_single(request, slug):
         locale = checklocale(request.get_host()),
         reference = client.entries({'content_type': 'reference', 'fields.slug': slug, 'locale': locale})[0]
         return render(request, 'reference_single.html', {
+            'locale': locale,
             'reference': reference,
             'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
             'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
@@ -47,6 +49,7 @@ def reference_single(request, slug):
 def listings(request):
     locale = checklocale(request.get_host()),
     return render(request, 'work.html', {
+        'locale': locale,
         'page': client.entries({'content_type': 'page', 'fields.slug': 'work-listings', 'locale': locale})[0],
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
         'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
@@ -57,6 +60,7 @@ def listings_single(request, slug):
         locale = checklocale(request.get_host()),
         listing = client.entries({'content_type': 'listing', 'fields.slug': slug, 'locale': locale})[0]
         return render(request, 'work-single.html', {
+            'locale': locale,
             'listing': listing,
             'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
             'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
@@ -69,6 +73,7 @@ def page(request, slug):
         locale = checklocale(request.get_host()),
         page = client.entries({'content_type': 'page', 'fields.slug': slug, 'locale': locale})[0]
         return render(request, 'page.html', {
+            'locale': locale,
             'page': page,
             'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
             'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
