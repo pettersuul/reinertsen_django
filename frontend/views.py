@@ -1,20 +1,17 @@
-from django.http import Http404
+from django.http import Http404, HttpRequest
 from django.shortcuts import render
 from .models import client
-import socket
-
-domain = socket.gethostname()
 
 # Create your views here.
 
 def index(request):
     return render(request, 'index.html', {
+        'domain': request.get_host(),
         'pages': client.entries({'content_type': 'page', 'order': 'fields.order', 'limit': 3}),
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order'}),
         'listings': client.entries({'content_type': 'page', 'fields.slug': 'work-listings'})[0],
         'contact':  client.entries({'content_type': 'contact'})[0],
-        'footer':  client.entries({'content_type': 'footer'})[0],
-        'domain': domain
+        'footer':  client.entries({'content_type': 'footer'})[0]
     })
 
 def references(request):
