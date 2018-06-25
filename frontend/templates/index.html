@@ -19,7 +19,13 @@
     <div class="col">
       <h2 class="heading-medium">{{ page.title }}</h2>
       <p>{{ page.lead }}</p>
-      <a href="{{ page.slug }}">Les mer</a>
+      <a href="{{ page.slug }}">
+        {% if locale == 'en-US'}
+          Read more
+        {% else %}
+          Les mer
+        {% endif %}
+      </a>
     </div>
     <img src="{% static '/images/hero-bg.png' %}">
   </section>
@@ -28,7 +34,13 @@
     <div class="col">
       <h3 class="heading-display">{{ page.title }}</h3>
       <p>{{ page.lead }}</p>
-      <a href="{{ page.slug }}">Les mer</a>
+      <a href="{{ page.slug }}">
+        {% if locale == 'en-US'}
+          Read more
+        {% else %}
+          Les mer
+        {% endif %}
+      </a>
     </div>
   </section>
   {% endif %}

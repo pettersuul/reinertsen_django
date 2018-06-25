@@ -16,6 +16,7 @@ def checklocale(domain):
 def index(request):
     locale = checklocale(request.get_host()),
     return render(request, 'index.html', {
+        'locale': locale,
         'pages': client.entries({'content_type': 'page', 'order': 'fields.order', 'limit': 3, 'locale': locale}),
         'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
         'listings': client.entries({'content_type': 'page', 'fields.slug': 'work-listings', 'locale': locale})[0],
