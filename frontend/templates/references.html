@@ -10,7 +10,7 @@
 
   {% if page.lead %}
   <div class="col">
-    <p>{{ page.lead }}</p>
+    {{ page.lead|markdownify|safe }}
   </div>
   {% endif %}
 

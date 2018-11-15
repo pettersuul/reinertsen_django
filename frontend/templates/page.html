@@ -7,7 +7,7 @@
     <h2 class="heading-display">{{ page.title }}</h2>
   </div>
   <div class="col">
-    <p>{{ page.lead }}</p>
+    {{ page.lead|markdownify|safe }}
     {{ page.content|markdownify|safe }}
     {% if page.image %}
       <img src="{{ page.image.url }}">

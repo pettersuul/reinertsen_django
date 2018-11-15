@@ -8,7 +8,7 @@
     <h2 class="heading-display">{{ page.title }}</h2>
 
     {% if page.lead %}
-      <p>{{ page.lead }}</p>
+      {{ page.lead|markdownify|safe }}
     {% endif %}
   </div>
 
