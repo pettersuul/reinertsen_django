@@ -18,7 +18,7 @@
     </div>
     <div class="col">
       <h2 class="heading-medium">{{ page.title }}</h2>
-      {{ page.lead|markdownify }}
+      {{ page.lead|markdownify|safe }}
       <a href="{{ page.slug }}">
         {% if locale.0 == 'en-US' %}
           Read more
