@@ -22,7 +22,7 @@
   {% if page.section.0.content_type.id == 'person'%}
     <section>
       {% for section in page.section %}
-      <div class="col wide person">
+      <div class="col person">
         <img src="{{ section.image.url }}" title="{{ section.image.title }}">
         <p>
           <h3 class="heading-small">{{ section.title }}</h3>

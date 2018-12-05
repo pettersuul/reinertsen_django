@@ -136,8 +136,12 @@ section.hero img{
   float: left;
 }
 
+.col.person{
+  width: calc(33% - 6rem - 1px);
+  padding: 0 0 0 6rem;
+}
+
 .col.person img{
-  float: left;
   width: 160px;
   height: 240px;
   margin: 0 3rem 3rem 0;
@@ -204,6 +208,11 @@ img{
   .col.wide{
     width: calc(100% - 6rem - 1px);
   }
+
+  .col.person{
+    width: calc(33% - 3rem - 1px);
+    padding: 0 0 0 3rem;
+  }
 }
 
 @media screen and (max-width: 959px) {
@@ -212,6 +221,10 @@ img{
   }
   .col{
     width: calc(100% - 6rem - 1px);
+  }
+  .col.person{
+    width: calc(50% - 3rem - 1px);
+    padding: 0 0 0 3rem;
   }
   header{
     padding: .75rem 0;
@@ -256,9 +269,13 @@ img{
   .col.wide{
     width: calc(100% - 6rem - 1px);
   }
+  .col.person{
+    width: calc(100% - 6rem - 1px);
+    padding: 0 3rem;
+  }
   .col.person img{
     float: none;
-    width: 50%;
+    width: 33%;
     height: unset;
     margin: 0 0 1.5rem 0;
   }
@@ -271,5 +288,9 @@ img{
   }
   .col.wide{
     width: calc(100% - 3rem - 1px);
+  }
+  .col.person{
+    width: calc(100% - 3rem - 1px);
+    padding: 0 1.5rem;
   }
 }
