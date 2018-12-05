@@ -11,8 +11,8 @@
     {{ page.content|markdownify|safe }}
     {% if page.image %}
       <img src="{{ page.image.url }}">
-      {% if page.imageCaption %}
-        {{ page.imageCaption|markdownify|safe } }
+      {% if page.image_caption %}
+        {{ page.image_caption|markdownify|safe }}
       {% endif %}
     {% endif %}
   </div>
