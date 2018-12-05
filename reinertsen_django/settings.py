@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pe2804)*_b=^!%%hh@kat+tpv6lq!okdsmx$h&rexitu9ffc)p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.rein-energy.no', 'www.rein-energy.com', 'rein-energy.no', 'rein-energy.com', '.herokuapp.com', 'localhost']
 
