@@ -14,10 +14,19 @@
   </div>
   {% endif %}
 
-  <div class="col wide">
+  <div class="col">
     {% for section in page.section %}
       <a class="list" href="/references/{{section.slug}}">{{ section.title }}</a>
     {% endfor %}
+  </div>
+
+  <div class="col">
+    {% if page.image %}
+      <img src="{{ page.image.url }}">
+      {% if page.image_caption %}
+        {{ page.image_caption|markdownify|safe }}
+      {% endif %}
+    {% endif %}
   </div>
 </section>
 
