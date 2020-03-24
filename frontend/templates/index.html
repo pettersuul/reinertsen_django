@@ -3,75 +3,11 @@
 {% load static %}
 
 {% block content %}
-
-{% for page in pages %}
-  {% if forloop.first %}
-  <section class="hero">
-    <div class="col">
-      <div class="logo big">
-        <a href="/">
-          <h1>
-            <span>Reinertsen</span>
-            <span>New Energy</span>
-          </h1>
-        </a>
-      </div>
-    </div>
-    <div class="col">
-      <h2 class="heading-medium">{{ page.title }}</h2>
-      {{ page.lead|markdownify|safe }}
-      <a href="{{ page.slug }}">
-        {% if locale.0 == 'en-US' %}
-          Read more
-        {% else %}
-          Les mer
-        {% endif %}
-      </a>
-    </div>
-    <img src="{% static '/images/hero-bg.png' %}">
+  <section>
+    <h1>Reinertsen New Energy</h1>
+    <p>We make zero happen</p>
   </section>
-  {% else %}
-  <section class="{% cycle "bg-bluelight" "bg-bluemedium" %}">
-    <div class="col">
-      <h3 class="heading-display">{{ page.title }}</h3>
-      {{ page.lead|markdownify|safe }}
-      <a href="{{ page.slug }}">
-        {% if locale.0 == 'en-US' %}
-          Read more
-        {% else %}
-          Les mer
-        {% endif %}
-      </a>
-    </div>
+  <section>
+    {{ page.content|markdownify|safe }}
   </section>
-  {% endif %}
-{% endfor %}
-
-<section class="">
-  <div class="col">
-    <h2 class="heading-display">{{ listings.title }}</h2>
-  </div>
-  <div class="col">
-    {% for listing in listings.section %}
-      <a class="list" href="/work-listings/{{ listing.slug }}">{{ listing.title }}</a>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="">
-  <div class="col wide">
-    <h2 class="heading-display">{{ contact.title }}</h2>
-  </div>
-  {% for person in contact.person %}
-    <div class="col person">
-      <img src="{{ person.image.url }}" title="{{ person.image.title }}">
-      <p>
-        <h3 class="heading-small">{{ person.title }}</h3>
-        {{ person.name }}<br>
-        {{ person.phone }}<br>
-        <a href="mailto:{{ person.email }}">{{ person.email }}</a>
-      </p>
-    </div>
-  {% endfor %}
-</section>
 {% endblock %}

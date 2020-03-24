@@ -24,7 +24,7 @@
 
   <body>
     {% if request.path == "/" %}
-      {% include 'components/header.html' with front='True' %}
+      {% include 'components/header.html' with index='True' %}
     {% else %}
       {% include 'components/header.html' %}
     {% endif %}

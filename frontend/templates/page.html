@@ -2,54 +2,11 @@
 {% load markdownify %}
 
 {% block content %}
-<section>
-  <div class="col">
-    <h2 class="heading-display">{{ page.title }}</h2>
-  </div>
-  <div class="col">
-    {{ page.lead|markdownify|safe }}
-    {{ page.content|markdownify|safe }}
-    {% if page.image %}
-      <img src="{{ page.image.url }}">
-      {% if page.image_caption %}
-        {{ page.image_caption|markdownify|safe }}
-      {% endif %}
-    {% endif %}
-  </div>
-</section>
 
-{% if page.section %}
-  {% if page.section.0.content_type.id == 'person'%}
-    <section>
-      {% for section in page.section %}
-      <div class="col person">
-        <img src="{{ section.image.url }}" title="{{ section.image.title }}">
-        <p>
-          <h3 class="heading-small">{{ section.title }}</h3>
-          {{ section.name }}<br>
-          {{ section.phone }}<br>
-          <a href="mailto:{{ section.email }}">{{ section.email }}</a>
-        </p>
-      </div>
-      {% endfor %}
-    </section>
-  {% else %}
-    {% for section in page.section %}
-      <section class="{% cycle "bg-bluelight" "bg-bluemedium" %}">
-        <div class="col">
-          <h3 class="heading-large">{{ section.title }}</h3>
-          {% if section.image %}
-            <img src="{{ section.image.url }}">
-          {% endif %}
-        </div>
-        <div class="col">
-          {{ section.content|markdownify|safe }}
-        </div>
-      </section>
-    {% endfor %}
-  {% endif %}
+  {% include 'components/section.html' with section=page %}
 
-{% endif %}
-
-
+  {% for subpage in page.subpages %}
+    {% include 'components/subsection.html' with section=subpage %}
+  {% endfor %}
+  
 {% endblock %}

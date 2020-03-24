@@ -6,10 +6,10 @@ def checklocale(domain):
     eng = '.com'
     no  = '.no'
 
-    if domain.endswith(no):
-        return 'nb-NO'
-    else:
+    if domain.endswith(eng):
         return 'en-US'
+    else:
+        return 'nb-NO'
 
 # Create your views here.
 
@@ -17,12 +17,21 @@ def index(request):
     locale = checklocale(request.get_host()),
     return render(request, 'index.html', {
         'locale': locale,
-        'pages': client.entries({'content_type': 'page', 'order': 'fields.order', 'limit': 3, 'locale': locale}),
-        'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
-        'listings': client.entries({'content_type': 'page', 'fields.slug': 'work-listings', 'locale': locale})[0],
-        'contact':  client.entries({'content_type': 'contact', 'locale': locale})[0],
-        'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
+        'page': client.entries({'content_type': 'page', 'fields.slug': 'index', 'locale': locale})[0],
+        'nav': client.entries({'content_type': 'menu', 'locale': locale})
     })
+
+def page(request, slug):
+    try:
+        locale = checklocale(request.get_host()),
+        page = client.entries({'content_type': 'page', 'fields.slug': slug, 'locale': locale})[0]
+        return render(request, 'page.html', {
+            'locale': locale,
+            'page': page,
+            'nav': client.entries({'content_type': 'menu', 'locale': locale})
+            })
+    except IndexError:
+        raise Http404()
 
 def references(request):
     locale = checklocale(request.get_host()),
@@ -62,19 +71,6 @@ def listings_single(request, slug):
         return render(request, 'work-single.html', {
             'locale': locale,
             'listing': listing,
-            'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
-            'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
-            })
-    except IndexError:
-        raise Http404('Post not found for slug: {0}'.format(slug))
-
-def page(request, slug):
-    try:
-        locale = checklocale(request.get_host()),
-        page = client.entries({'content_type': 'page', 'fields.slug': slug, 'locale': locale})[0]
-        return render(request, 'page.html', {
-            'locale': locale,
-            'page': page,
             'nav':  client.entries({'content_type': 'page', 'order': 'fields.order', 'locale': locale}),
             'footer':  client.entries({'content_type': 'footer', 'locale': locale})[0]
             })

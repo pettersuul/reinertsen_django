@@ -1,25 +1,9 @@
 <header>
-  <div class="col wide">
     <nav>
       <ul>
-      {% for nav in nav %}
-        <li><a href="/{{ nav.slug }}">{{ nav.title }}</a></li>
-      {% endfor %}
+        {% for page in nav.0.pages %}
+          <li><a href="/{{ page.slug }}">{{ page.title }}</a></li>
+        {% endfor %}
       </ul>
     </nav>
-    <div id="menu-button" onclick="toggleNav()">
-      <span class="icon">menu</span>
-    </div>
-    {% if front == 'True' %}
-    {% else %}
-      <div class="logo">
-        <a href="/">
-          <h1>
-            <span>Reinertsen</span>
-            <span>New Energy</span>
-          </h1>
-        </a>
-      </div>
-    {% endif %}
-  </div>
 </header>

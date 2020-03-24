@@ -1,0 +1,6 @@
+{% load markdownify %}
+
+<section>
+  <h2>{{ section.title }}</h2>
+  {{ section.content|markdownify|safe }}
+</section>
